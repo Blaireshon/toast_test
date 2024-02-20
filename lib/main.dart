@@ -55,25 +55,16 @@ class _MyHomePageState extends State<MyHomePage> {
         borderRadius: BorderRadius.circular(10.0),
         color: Color(0xff67CC36),
       ),
-      child: Center(child: Text(msg,style: TextStyle(color:Colors.white, decoration: TextDecoration.none,), textAlign: TextAlign.center)),
+      child: Center(child: Text(msg,style: TextStyle(color:Colors.white, decoration: TextDecoration.none), textAlign: TextAlign.center)),
     );
 
     ///toast 생성
     toastView.createToast(
       child: toast,
       context: context,
-      duration: const Duration(seconds: 1), //시간 설정
-      positionBuilder: (context, child){ //custom
-        return Stack(
-          alignment: Alignment.center,
-          children: [
-            Positioned(
-              child: child,
-              top: 200,
-            ),
-          ],
-        );
-      },
+      duration: const Duration(seconds: 1),
+      position: toastPosition.TOP//시간 설정
+
     );
   }
 
