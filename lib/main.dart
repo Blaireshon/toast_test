@@ -51,6 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Container(
       //width: MediaQuery.of(context).size.width-50,
       //padding: const EdgeInsets.symmetric(horizontal: 24.0,vertical: 12),
+      height: 50,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.0),
         color: Color(0xff67CC36),
@@ -62,8 +63,9 @@ class _MyHomePageState extends State<MyHomePage> {
     toastView.createToast(
       child: toast,
       context: context,
-      duration: const Duration(seconds: 1),
-      position: toastPosition.TOP//시간 설정
+      duration: const Duration(seconds: 1),//시간 설정
+      position: toastPosition.TOP,
+      animation: toastAnimation.TOP
 
     );
   }
