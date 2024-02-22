@@ -87,15 +87,21 @@ class _MyHomePageState extends State<MyHomePage> {
         child: toast,
         context: context,
         duration: const Duration(seconds: 3), //시간 설정
-        animation: toastAnimation.RIGHT,
-        //position: toastPosition.TOP,
-        positionBuilder: (context, child) {
-          return Stack(
-            alignment: Alignment.center,
-            children: [
-              Positioned(child: child, top: 600, left: 150),
-            ],
-          );
-        });
+        fadeDuration:  const Duration(milliseconds: 350), // 스르륵 사라짐
+       //animation: toastAnimation.RIGHT,
+        position: toastPosition.BOTTOM,
+      presentation: toastpresentation.LAYER,
+
+       // positionBuilder:  (context, child) {
+       //    return Stack(
+       //      alignment: Alignment.center,
+       //      children: [
+       //        Positioned(child: child,
+       //            top: 200,
+       //            left: 300),
+       //      ],
+       //    );
+       //  }
+        );
   }
 }
