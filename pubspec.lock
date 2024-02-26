@@ -75,6 +75,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  get:
+    dependency: "direct main"
+    description:
+      name: get
+      sha256: e4e7335ede17452b391ed3b2ede016545706c01a02292a6c97619705e7d2a85e
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.6.6"
   lints:
     dependency: transitive
     description:
@@ -136,6 +144,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.11.1"
+  sticky_headers_practice:
+    dependency: "direct main"
+    description:
+      path: "../sticky_headers_practice"
+      relative: true
+    source: path
+    version: "0.0.1"
   stream_channel:
     dependency: transitive
     description:
@@ -152,6 +167,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  table_sticky_headers:
+    dependency: "direct main"
+    description:
+      name: table_sticky_headers
+      sha256: "18206bf35c5c7306ac4d5efd66ea3f0b47a6c73b249523f7bc84e36344eacf3b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.5"
   term_glyph:
     dependency: transitive
     description:
@@ -192,5 +215,5 @@ packages:
     source: hosted
     version: "0.3.0"
 sdks:
-  dart: ">=3.2.3 <4.0.0"
-  flutter: ">=1.17.0"
+  dart: ">=3.2.6 <4.0.0"
+  flutter: ">=3.13.0"

@@ -37,6 +37,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   toast_practice:
     path: ../toast_practice
+  get: ^4.6.6
+  sticky_headers_practice:
+    path: ../sticky_headers_practice
+  table_sticky_headers: ^2.0.5
+
 
 dev_dependencies:
   flutter_test:

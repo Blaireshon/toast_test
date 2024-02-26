@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:toast_practice/toast_practice.dart';
+
+import 'StickyHeadersText.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -17,26 +21,80 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home:  MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+   MyHomePage({super.key, required this.title});
 
   final String title;
 
-  @override
+  // late List<List<String>> data= [];
+  // late List<String> titleColumn =[];
+  // late List<String> titleRow =[];
+  //
+  //  List<List<String>> makeData() {
+  //    final List<List<String>> output = [];
+  //    for (int i = 0; i < 20; i++) {
+  //      final List<String> row = [];
+  //      for (int j = 0; j < 5; j++) {
+  //        row.add('L$j : T$i');
+  //      }
+  //      output.add(row);
+  //    }
+  //    return output;
+  //  }
+  //  // for(var i= 0; i<5; i++){
+  //  // titleColumn.add('Column '+(i+1).toString());
+  //  // }
+  //  // for(var i= 0; i<20; i++){
+  //  // titleRow.add('Row '+(i+1).toString());
+  //  // }
+  //
+  //  List<String> makeTitleColumn() => List.generate(20, (i) => 'Column $i');
+  //  /// Simple generator for row title
+  //  List<String> makeTitleRow() => List.generate(10, (i) => 'Row $i');
+
+
+   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  //final OverlayController overlayController = Get.put(OverlayController()); // OverlayController 등록
   int _counter = 0;
+
+  late List<List<String>> data= [];
+  late List<String> titleColumn =[];
+  late List<String> titleRow =[];
+
+  @override
+  void initState() {
+
+      var datacnt = 0;
+      for (int i = 0; i < 5; i++) {
+        final List<String> row = [];
+        for (int j = 0; j < 20; j++) {
+          row.add(datacnt.toString());
+          datacnt++;
+        }
+        data.add(row);
+      }
+        for (var i = 0; i < 20; i++) {
+          titleRow.add('Row ' + (i + 1).toString());
+        }
+        for (var i = 0; i < 5; i++) {
+          titleColumn.add('Column ' + (i + 1).toString());
+        }
+
+  }
 
   ///숫자 증가
   void _incrementCounter() {
     _counter = ToastView().addOne(_counter);
+    //_counter = Sticky().addOne(_counter);
     setState(() {});
   }
 
@@ -216,6 +274,27 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: TextStyle(color: Colors.white)),
                 ),
               ),
+              SizedBox(height: 10,),
+              Container(
+                width: 200,
+                child: ElevatedButton(
+                  onPressed: () {
+                    print(data);
+                    print(titleColumn);
+                    print(titleRow);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>  StickyHeadersText(data: data, titleColumn: titleColumn , titleRow: titleRow)),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    elevation: 0,
+                  ),
+                  child: const Text('StickyHeadersTable',
+                      style: TextStyle(color: Colors.white)),
+                ),
+              ),
 
             ],
           ),
@@ -233,21 +312,9 @@ class _MyHomePageState extends State<MyHomePage> {
         child: toast(msg),
         context: context,
         duration: const Duration(milliseconds: 400), //시간 설정
-       //fadeDuration:  const Duration(milliseconds: 350), // 스르륵 사라짐
-       //animation: toastAnimation.RIGHT,
         position: toastPosition.TOP,
       presentation: toastpresentation.LAYER,
 
-       // positionBuilder:  (context, child) {
-       //    return Stack(
-       //      alignment: Alignment.center,
-       //      children: [
-       //        Positioned(child: child,
-       //            top: 200,
-       //            left: 300),
-       //      ],
-       //    );
-       //  }
         );
   }
 
@@ -379,6 +446,7 @@ class _MyHomePageState extends State<MyHomePage> {
       presentation: toastpresentation.LAYER,
     );
   }
+
 }
 ///child 위젯 설정
 Widget toast(String msg) {
