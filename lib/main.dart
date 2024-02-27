@@ -31,39 +31,12 @@ class MyHomePage extends StatefulWidget {
 
   final String title;
 
-  // late List<List<String>> data= [];
-  // late List<String> titleColumn =[];
-  // late List<String> titleRow =[];
-  //
-  //  List<List<String>> makeData() {
-  //    final List<List<String>> output = [];
-  //    for (int i = 0; i < 20; i++) {
-  //      final List<String> row = [];
-  //      for (int j = 0; j < 5; j++) {
-  //        row.add('L$j : T$i');
-  //      }
-  //      output.add(row);
-  //    }
-  //    return output;
-  //  }
-  //  // for(var i= 0; i<5; i++){
-  //  // titleColumn.add('Column '+(i+1).toString());
-  //  // }
-  //  // for(var i= 0; i<20; i++){
-  //  // titleRow.add('Row '+(i+1).toString());
-  //  // }
-  //
-  //  List<String> makeTitleColumn() => List.generate(20, (i) => 'Column $i');
-  //  /// Simple generator for row title
-  //  List<String> makeTitleRow() => List.generate(10, (i) => 'Row $i');
-
 
    @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  //final OverlayController overlayController = Get.put(OverlayController()); // OverlayController 등록
   int _counter = 0;
 
   late List<List<String>> data= [];
@@ -73,10 +46,10 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
 
-      var datacnt = 0;
-      for (int i = 0; i < 5; i++) {
+      var datacnt = 1;
+      for (int i = 0; i < 20; i++) {
         final List<String> row = [];
-        for (int j = 0; j < 20; j++) {
+        for (int j = 0; j < 5; j++) {
           row.add(datacnt.toString());
           datacnt++;
         }
@@ -94,7 +67,6 @@ class _MyHomePageState extends State<MyHomePage> {
   ///숫자 증가
   void _incrementCounter() {
     _counter = ToastView().addOne(_counter);
-    //_counter = Sticky().addOne(_counter);
     setState(() {});
   }
 
@@ -279,9 +251,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: 200,
                 child: ElevatedButton(
                   onPressed: () {
-                    print(data);
-                    print(titleColumn);
-                    print(titleRow);
+                     print(data);
+                    // print(titleColumn);
+                    // print(titleRow);
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) =>  StickyHeadersText(data: data, titleColumn: titleColumn , titleRow: titleRow)),
@@ -296,7 +268,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
 
+
             ],
+
           ),
         )// This trailing comma makes auto-formatting nicer for build methods.
         );
@@ -314,7 +288,6 @@ class _MyHomePageState extends State<MyHomePage> {
         duration: const Duration(milliseconds: 400), //시간 설정
         position: toastPosition.TOP,
       presentation: toastpresentation.LAYER,
-
         );
   }
 
