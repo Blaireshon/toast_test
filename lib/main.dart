@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -39,7 +39,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
-  late List<List<String>> data= [];
+  late  List<List<String>> data= [];
   late List<String> titleColumn =[];
   late List<String> titleRow =[];
 
@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
 
       var datacnt = 1;
-      for (int i = 0; i < 20; i++) {
+      for (int i = 0; i < 1000; i++) {
         final List<String> row = [];
         for (int j = 0; j < 5; j++) {
           row.add(datacnt.toString());
@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
         }
         data.add(row);
       }
-        for (var i = 0; i < 20; i++) {
+        for (var i = 0; i < 1000; i++) {
           titleRow.add('Row ' + (i + 1).toString());
         }
         for (var i = 0; i < 5; i++) {
@@ -200,22 +200,22 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: TextStyle(color: Colors.white)),
                 ),
               ),
-              SizedBox(height: 10,),
-              Container(
-                width: 200,
-                child: ElevatedButton(
-                  onPressed: () {
-                     _incrementCounter();
-                     _stackToast('$_counter', context);
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
-                    elevation: 0,
-                  ),
-                  child: const Text('STACK',
-                      style: TextStyle(color: Colors.white)),
-                ),
-              ),
+              // SizedBox(height: 10,),
+              // Container(
+              //   width: 200,
+              //   child: ElevatedButton(
+              //     onPressed: () {
+              //        _incrementCounter();
+              //        _stackToast('$_counter', context);
+              //     },
+              //     style: ElevatedButton.styleFrom(
+              //       backgroundColor: Colors.green,
+              //       elevation: 0,
+              //     ),
+              //     child: const Text('STACK',
+              //         style: TextStyle(color: Colors.white)),
+              //   ),
+              // ),
               SizedBox(height: 10,),
               Container(
                 width: 200,
@@ -251,7 +251,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: 200,
                 child: ElevatedButton(
                   onPressed: () {
-                     print(data);
+                     // print(data);
                     // print(titleColumn);
                     // print(titleRow);
                     Navigator.push(
