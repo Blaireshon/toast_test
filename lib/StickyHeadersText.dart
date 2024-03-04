@@ -46,12 +46,11 @@ class StickyHeadersText extends StatelessWidget {
 
   /// data 업데이트
   void refreshData() {
-    /// 1초에 1000개 수정
     Timer.periodic(const Duration(milliseconds: 1), (Timer timer) {
       Random random = Random();
-      int rowIndx = random.nextInt(1000);
+      int rowIndx = random.nextInt(200);
       int columnIndx = random.nextInt(5);
-      String newValue = random.nextInt(1000).toString();
+      String newValue = random.nextInt(200).toString();
 
       // 값 업데이트
       makeTableKey.currentState!.updateCellValue(rowIndx, columnIndx, newValue);

@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
 
       var datacnt = 1;
-      for (int i = 0; i < 1000; i++) {
+      for (int i = 0; i < 200; i++) {
         final List<String> row = [];
         for (int j = 0; j < 5; j++) {
           row.add(datacnt.toString());
@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
         }
         data.add(row);
       }
-        for (var i = 0; i < 1000; i++) {
+        for (var i = 0; i < 200; i++) {
           titleRow.add('Row ' + (i + 1).toString());
         }
         for (var i = 0; i < 5; i++) {
