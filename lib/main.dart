@@ -200,22 +200,22 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: TextStyle(color: Colors.white)),
                 ),
               ),
-              // SizedBox(height: 10,),
-              // Container(
-              //   width: 200,
-              //   child: ElevatedButton(
-              //     onPressed: () {
-              //        _incrementCounter();
-              //        _stackToast('$_counter', context);
-              //     },
-              //     style: ElevatedButton.styleFrom(
-              //       backgroundColor: Colors.green,
-              //       elevation: 0,
-              //     ),
-              //     child: const Text('STACK',
-              //         style: TextStyle(color: Colors.white)),
-              //   ),
-              // ),
+              SizedBox(height: 10,),
+              Container(
+                width: 200,
+                child: ElevatedButton(
+                  onPressed: () {
+                     _incrementCounter();
+                     _stackToast('$_counter', context);
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green,
+                    elevation: 0,
+                  ),
+                  child: const Text('STACK',
+                      style: TextStyle(color: Colors.white)),
+                ),
+              ),
               SizedBox(height: 10,),
               Container(
                 width: 200,
